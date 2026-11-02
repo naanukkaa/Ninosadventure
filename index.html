@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffc4dc">
+<title>ნინოს დაბადების დღის თავგადასავალი 🎀</title>
+<!-- Font: ჩაანაცვლე შენი ფონტით style.css-ში (--f ცვლადი). ეს ხაზი მხოლოდ დროებითია. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@500;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game">
+  <div id="decor"></div>
+
+  <!-- 1. გახსნის ეკრანი -->
+  <section class="screen" id="intro">
+    <div class="sprite big" id="introSpr"></div>
+    <div class="win"><div class="bar"><i></i><i></i><i></i></div>
+      <div class="body"><p id="introText"></p>
+      <button class="btn pulse" id="startBtn" hidden>დავიწყოთ თავგადასავალი!</button></div></div>
+  </section>
+
+  <!-- 2. მისიების რუკა -->
+  <section class="screen" id="map">
+    <div class="row"><div class="sprite sm" id="mapSpr"></div>
+      <div class="win bub"><div class="body"><p id="mapSay"></p></div></div></div>
+    <div id="prog"></div>
+    <div id="envs"></div>
+  </section>
+
+  <!-- 3. მისიის გვერდი (1-3) -->
+  <section class="screen" id="mission">
+    <button class="btn sm back" data-go="map">← რუკა</button>
+    <h2 id="mTitle"></h2>
+    <div class="deco" id="mDeco"></div>
+    <div class="row"><div class="sprite sm" id="mSpr"></div>
+      <div class="win bub"><div class="body"><p id="mSay"></p></div></div></div>
+    <div class="note"><span class="nb" id="noteBow"></span><p id="clue"></p></div>
+    <button class="btn" id="hintBtn" hidden>მინიშნება მივიღე!</button>
+    <button class="btn pulse" id="doneBtn" hidden>ვიპოვე! შემდეგი მისია!</button>
+  </section>
+
+  <!-- 4. ფინალური მისიის შესავალი -->
+  <section class="screen" id="m4">
+    <button class="btn sm back" data-go="map">← რუკა</button>
+    <h2>👑 მთავარი სიურპრიზი 👑</h2>
+    <div class="sprite mid" id="m4introSpr"></div>
+    <div class="win"><div class="bar"><i></i><i></i><i></i></div>
+      <div class="body"><p>ეს არის ბოლო მისია — ფინალური ბოსი! 😎<br>ტელეფონი მაგრად დაიჭირე და მზად იყავი...</p></div></div>
+    <button class="btn pulse" id="m4go">გახსენი ბოლო კონვერტი! 💌</button>
+  </section>
+
+  <!-- 5. ფინალის ანიმაცია -->
+  <section class="screen" id="stage">
+    <div id="rays"></div>
+    <div class="sprite mid" id="m4spr"></div>
+    <div class="win" id="m4win"><div class="bar"><i></i><i></i><i></i></div>
+      <div class="body"><p id="m4txt"></p><button class="btn pulse" id="m4btn" hidden>ვიხედები! 👀</button></div></div>
+    <div id="chest"></div>
+    <div id="flash"></div>
+  </section>
+
+  <!-- 6. დაბადების დღის ეკრანი -->
+  <section class="screen" id="end">
+    <div class="sprite big" id="endSpr"></div>
+    <div id="cake"></div>
+    <h1>გილოცავ დაბადების დღეს, ნინო! 🎀</h1>
+    <p class="love">💗 შენ ყველაზე საუკეთესო დაბადების დღის გოგო ხარ! 💗</p>
+    <button class="btn" data-go="map">რუკაზე დაბრუნება</button>
+    <button class="btn sm" id="replay">ფინალის თავიდან ნახვა</button>
+  </section>
+
+  <div id="toast"></div>
+</div>
+<canvas id="fx"></canvas>
+<script src="script.js"></script>
+</body>
+</html>
